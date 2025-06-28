@@ -1,0 +1,234 @@
+/* Full viewport centering */
+html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container box */
+ #app {
+  width: 100vw;
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100vh;
+} 
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Labels and inputs */
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Buttons */
+button {
+  padding: 0.6rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Password strength UI */
+meter {
+  width: 100%;
+  height: 8px;
+  margin-bottom: 0.5rem;
+}
+
+small {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Profile image preview */
+#photoPreview {
+  display: block;
+  max-width: 150px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+/* Container flex for sidebar and form */
+.container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  height: 80vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 220px;
+  background: #f7f9fc;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list .step {
+  padding: 15px 10px;
+  cursor: pointer;
+  color: #555;
+  border-left: 4px solid transparent;
+  margin-bottom: 10px;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.steps-list .step:hover {
+  background-color: #e9f0ff;
+}
+
+.steps-list .step.active {
+  color: #007bff;
+  border-left-color: #007bff;
+  background-color: #e9f0ff;
+  font-weight: 700;
+}
+
+/* Form area */
+.form-area {
+  flex-grow: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Top step progress bar */
+.step-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.step-progress .circle {
+  background: #ddd;
+  color: #666;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  user-select: none;
+  z-index: 2;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.step-progress .circle.active {
+  background: #007bff;
+  color: white;
+}
+
+.step-progress .line {
+  height: 3px;
+  background: #ddd;
+  flex-grow: 1;
+  margin: 0 8px;
+  position: relative;
+  top: -1px;
+  transition: background-color 0.3s;
+}
+
+.step-progress .circle.active + .line {
+  background: #007bff;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    overflow-x: auto;
+  }
+  
+  .steps-list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .steps-list .step {
+    flex: 1;
+    margin: 0 5px;
+    border-left: none;
+    border-bottom: 4px solid transparent;
+  }
+  
+  .steps-list .step.active {
+    border-left: none;
+    border-bottom-color: #007bff;
+    background-color: transparent;
+    color: #007bff;
+  }
+}
+
+

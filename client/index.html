@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi step Form </title>
+    <link rel="stylesheet" href="src\index.css">
+  </head>
+  <body>
+    <div id="app">
+<div class="container">
+  <div class="sidebar">
+    <ul class="steps-list">
+      <li class="step active" data-step="1">1. Personal Info</li>
+      <li class="step" data-step="2">2. Professional Details</li>
+      <li class="step" data-step="3">3. Preferences</li>
+    </ul>
+  </div>
+
+  <div class="form-area">
+    <div class="step-progress">
+      <div class="circle active">1</div>
+      <div class="line"></div>
+      <div class="circle">2</div>
+      <div class="line"></div>
+      <div class="circle">3</div>
+    </div>
+
+
+      <h1>Multi Step User Profile  Update Form</h1>
+      
+        <form id="step1-form" enctype="multipart/form-data">
+  <h2> Personal Info</h2>
+  <label for="profilePhoto">Profile Photo (JPG/PNG, ≤2MB):</label><br />
+  <input type="file" id="profilePhoto" name="profilePhoto" accept=".jpg, .jpeg, .png" required />
+  <br />
+  <img id="photoPreview" src="" alt="Preview" style="display:none; max-width: 150px; margin-top:10px;" />
+  <br /><br />
+
+  <label for="username">Username:</label><br />
+  <input type="text" id="username" name="username" required />
+  <small id="usernameFeedback"></small>
+  <br /><br />
+
+
+  <label for="currentPassword">Current Password:</label><br />
+  <input type="password" id="currentPassword" name="currentPassword" />
+  <br /><br />
+
+  
+  <label for="newPassword">New Password:</label><br />
+  <input type="password" id="newPassword" name="newPassword" />
+  <meter max="4" id="passwordStrengthMeter"></meter>
+  <small id="passwordStrengthText"></small>
+  <br /><br />
+
+  <button type="submit">Next</button>
+</form>
+<form id="step2-form" style="display: none ;">
+  <h2>Professional Details</h2>
+
+  <!-- Profession Dropdown -->
+  <label for="profession">Profession:</label><br />
+  <select id="profession" name="profession" required>
+    <option value="">--Select Profession--</option>
+    <option value="Student">Student</option>
+    <option value="Developer">Developer</option>
+    <option value="Entrepreneur">Entrepreneur</option>
+  </select>
+  <br /><br />
+
+  <!-- Company Name (conditional) -->
+  <div id="companySection" style="display: none;">
+    <label for="companyName">Company Name:</label><br />
+    <input type="text" id="companyName" name="companyName" />
+    <br /><br />
+  </div>
+
+  <!-- Address Line 1 -->
+  <label for="address1">Address Line 1:</label><br />
+  <input type="text" id="address1" name="address1" required />
+  <br /><br />
+
+  <button type="submit">Next</button>
+</form>
+<form id="step3-form" style="display: none;">
+  <h2>Preferences</h2>
+
+  <!-- Country -->
+  <label for="country">Country:</label>
+  <select id="country" required>
+    <option value="">--Select Country--</option>
+    <!-- Populated via JS -->
+  </select>
+  <br/><br/>
+
+  <!-- State -->
+  <label for="state">State:</label>
+  <select id="state" required disabled>
+    <option value="">--Select State--</option>
+  </select>
+  <br/><br/>
+
+  <!-- City -->
+  <label for="city">City:</label>
+  <select id="city" required disabled>
+    <option value="">--Select City--</option>
+  </select>
+  <br/><br/>
+
+  <!-- Subscription Plan -->
+  <label>Subscription Plan:</label><br/>
+  <label><input type="radio" name="plan" value="Basic" required> Basic</label>
+  <label><input type="radio" name="plan" value="Pro"> Pro</label>
+  <label><input type="radio" name="plan" value="Enterprise"> Enterprise</label>
+  <br/><br/>
+
+
+  <label><input type="checkbox" id="newsletter" checked> Subscribe to newsletter</label>
+  <br/><br/>
+
+  <button type="submit">Next</button>
+</form>
+
+
+  </div>
+</div>
+    </div>
+      
+    </div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>
