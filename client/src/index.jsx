@@ -1,3 +1,5 @@
+    import './index.css';
+
 document.addEventListener("DOMContentLoaded", function () {
   const profilePhotoInput = document.getElementById("profilePhoto");
   const photoPreview = document.getElementById("photoPreview");
