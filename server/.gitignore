@@ -1,6 +1,6 @@
 # Dependency directories
-server/node_modules/
+node_modules
 
 # Ignore uploaded files
-server/uploads/
+uploads
 .env
