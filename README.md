@@ -22,6 +22,10 @@ This multi-step form is designed to collect essential user information in a clea
   - Personal Information: Profile Pic, Name, Password
   - Professional Information:  Profession , Address
   - Preferences: City, Country, Subscription, Newsletter
+    
+  #  Deployment
+  - Frontend deployment: vercel
+  - Backend deployment: render
 
   #  Test Cases
   - Personal Info
